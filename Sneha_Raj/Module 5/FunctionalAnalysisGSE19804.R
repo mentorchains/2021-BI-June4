@@ -80,5 +80,5 @@ cnetplot(c3_convert, foldChange=FC_data, categorySize="pvalue", colorEdge=TRUE)
 
 # Prep for external tools
 write(top_logFC, "/Users/Siya/Desktop/StemAway/Sorted logFC.txt")
-
+write(names(top_logFC), "/Users/Siya/Desktop/StemAway/Upreg DEGs.txt")
 
