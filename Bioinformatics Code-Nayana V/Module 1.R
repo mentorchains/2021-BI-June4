@@ -107,7 +107,7 @@ png("yaymyownboxplotwtheme.png")
 ggplot(newmetadata)+geom_boxplot(aes(x=genotype, y=samplemeans, fill=celltype))+labs(title="Genotype vs Sample Means")+xlab("Genotype")+ylab("Mean expression")+theme(axis.text = element_text(size=rel(1.25)), axis.title = element_text(size=rel(1.25)), plot.title=element_text(hjust=0.5))+theme_classic()
 dev.off()
 dev.list()
-#Another way to add a title is: ggtitle("Title here yo") 
+#Another way to add a title is: ggtitle("Title here") 
 #row.names=the column in which row names are in 
 install.packages("BiocManager") 
 BiocManager::install('EnhancedVolcano')
