@@ -1,5 +1,4 @@
-
-#quality control 
+#Quality Control 
 
 #simpelaffay 
 #qc analysis report assigned to object qcgse19804 
@@ -34,7 +33,7 @@ gcrmadata19804 <- read.csv("gcrmadata19804.csv", row.names=1)
 
 
 
-#data visualization 
+#Data Visualization 
 
 #boxplot
 boxplot(gcrmadata19804, main="Normalized GSE19804 Data", xlab="Samples", ylab="Probe Intensities")
@@ -42,18 +41,13 @@ boxplot(gcrmadata19804, main="Normalized GSE19804 Data", xlab="Samples", ylab="P
 
 
 
-
-
-
 #PCA
-
 
 #raw
 pcadata19804_raw <- prcomp(exprs(data19804), scale=F, center=F)
 pcadata19804_raw <- as.data.frame(pcadata19804_raw$rotation)
 group <- as.factor(modmeta19804$Tissue)
 ggplot(pcadata19804_raw, aes(x=PC1, y=PC2, color=group))+geom_point()+stat_ellipse()+ggtitle("Raw Data PCA Plot")
-
 
 
 #normalized 
@@ -64,7 +58,8 @@ ggplot(pcadata19804_norm, aes(x=PC1, y=PC2, color=group))+geom_point()+stat_elli
 
 
 
-#heatmap
+
+#Heatmap
 corrdata19804 <- 1-cor(gcrmadata19804)
 group <- as.factor(modmeta19804$Tissue)
 pheatmap(corrdata19804, main="Normalized GSE19804 Data Heatmap", labels_row = modmeta19804$Tissue, labels_col = modmeta19804$Sample)
