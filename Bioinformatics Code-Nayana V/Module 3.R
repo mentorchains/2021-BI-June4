@@ -11,7 +11,6 @@ library(GEOquery)
 
 
 
-
 #Quality Control 
 
 #simpelaffay 
