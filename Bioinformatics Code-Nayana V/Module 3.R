@@ -1,3 +1,17 @@
+#Loading Libraries of Necessary Packages
+library(affy)
+library(affyPLM)
+library(simpleaffy)
+library(arrayQualityMetrics)
+library(affyQCReport)
+library(sva)
+library(ggplot2)
+library(pheatmap)
+library(GEOquery)
+
+
+
+
 #Quality Control 
 
 #simpelaffay 
