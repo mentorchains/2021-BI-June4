@@ -1,0 +1,26 @@
+BiocManager::install("affy")
+BiocManager::install("affyPLM")
+BiocManager::install("simpleaffy")
+BiocManager::install("arrayQualityMetrics")
+BiocManager::install("affyQCReport")
+BiocManager::install("sva")
+BiocManager::install("GEOquery")
+install.packages("pheatmap")
+library(affy)
+library(affyPLM)
+library(simpleaffy)
+library(arrayQualityMetrics)
+library(affyQCReport)
+library(sva)
+library(ggplot2)
+library(pheatmap)
+ReadAffy(celfile.path="data/", compress=TRUE)
+library(GEOquery)
+gse19804 <- getGEO(filename = "metadata/GSE19804_series_matrix.txt")
+meta19804 <- gse19804@phenoData@data
+meta19804
+list <- 1:120
+modmeta19804 <- data.frame(Sample=rownames(meta19804), Tissue=meta19804$characteristics_ch1,row.names=list)
+setwd("/Users/nayanav/desktop/intro-to-r")
+
+rm(modmeta19804)
